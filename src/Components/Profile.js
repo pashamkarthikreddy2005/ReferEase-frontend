@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './Profile.css';
+import Loader from './Loader';
 
 function Profile() {
     const navigate = useNavigate();
@@ -16,6 +17,7 @@ function Profile() {
 
     const [responseMessage, setResponseMessage] = useState('');
     const [isSuccess, setIsSuccess] = useState(false);
+    const [loading, setLoading] = useState(false); // 🔄 Loader state
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -27,6 +29,7 @@ function Profile() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true); // Show loader
 
         try {
             const token = localStorage.getItem('token');
@@ -38,19 +41,25 @@ function Profile() {
             });
 
             if (response.status === 200) {
-                console.log(response)
                 setIsSuccess(true);
                 setResponseMessage('Profile updated successfully!');
-                navigate('/');
+                
+                setTimeout(() => {
+                    navigate('/');
+                }, 2000);
             }
         } catch (error) {
             setIsSuccess(false);
             setResponseMessage('Error updating profile. Please try again.');
+        } finally {
+            setLoading(false); // Hide loader
         }
     };
 
     return (
         <>
+            {loading && <Loader />} {/* Show Loader while loading */}
+
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>First Name:</label>
@@ -103,7 +112,9 @@ function Profile() {
                     />
                 </div>
 
-                <button type="submit">Complete</button>
+                <button type="submit" disabled={loading}>
+                    {loading ? 'Submitting...' : 'Complete'}
+                </button>
 
                 {responseMessage && (
                     <p className={`response-message ${isSuccess ? 'success' : 'error'}`}>

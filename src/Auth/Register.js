@@ -104,7 +104,7 @@ function Register() {
                         />
                     </div>
                     <div>
-                        <label>Referral Code</label>
+                        <label>Referral Code(Optional)</label>
                         <input
                             type="text"
                             name="referrer"

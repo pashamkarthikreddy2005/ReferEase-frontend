@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-// import './Referrals.css';
+import Loader from './Loader'; // Import your Loader component
 
 function Referrals() {
     const navigate = useNavigate();
     const [referrals, setReferrals] = useState([]);
     const [responseMessage, setResponseMessage] = useState('');
     const [isSuccess, setIsSuccess] = useState(false);
+    const [loading, setLoading] = useState(true); // 🔄 Loader state
 
     useEffect(() => {
         const fetchReferrals = async () => {
@@ -28,6 +29,8 @@ function Referrals() {
             } catch (error) {
                 setIsSuccess(false);
                 setResponseMessage('Error fetching Referrals. Please try again.');
+            } finally {
+                setLoading(false); // Hide loader
             }
         };
 
@@ -38,26 +41,30 @@ function Referrals() {
         <div>
             <h2>Referrals</h2>
 
-            {responseMessage && (
+            {loading && <Loader />} {/* Show Loader while fetching */}
+
+            {!loading && responseMessage && (
                 <p className={`response-message ${isSuccess ? 'success' : 'error'}`}>
                     {responseMessage}
                 </p>
             )}
 
-            <div>
-                {referrals.length > 0 ? (
-                    <ul>
-                        {referrals.map((referral) => (
-                            <li key={referral.id}>
-                                User ID: {referral.id} - Username: {referral.username} - Email: {referral.email} - 
-                                Profile Status: {referral.isProfileCompleted ? 'Completed' : 'Pending'}
-                            </li>
-                        ))}
-                    </ul>
-                ) : (
-                    <p>No referrals found.</p>
-                )}
-            </div>
+            {!loading && (
+                <div>
+                    {referrals.length > 0 ? (
+                        <ul>
+                            {referrals.map((referral) => (
+                                <li key={referral.id}>
+                                    User ID: {referral.id} - Username: {referral.username} - Email: {referral.email} - 
+                                    Profile Status: {referral.isProfileCompleted ? 'Completed' : 'Pending'}
+                                </li>
+                            ))}
+                        </ul>
+                    ) : (
+                        <p>No referrals found.</p>
+                    )}
+                </div>
+            )}
         </div>
     );
 }
