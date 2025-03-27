@@ -13,8 +13,8 @@
     color: black;
     font-family: "Times New Roman", Times, serif;
     font-style: italic;
-    font-size: 83px;
     position: relative;
+    font-size: 83px;
 }
 
 .dot {
@@ -23,16 +23,18 @@
     border-radius: 50%;
     background-color: #002452;
     position: absolute;
-    left: calc(50% + 30px); /* Move the dot to the right of 'l' */
-    top: 50%;
+    left: 50.5%;
+    top: 51%;
+    margin-left: -15px;
+    margin-top: -15px;
     animation: rotate 1s cubic-bezier(0.5, 0, 0.5, 1) infinite;
 }
 
 @keyframes rotate {
     0% {
-        transform: rotate(0deg) translateX(30px) rotate(0deg);
+        transform: rotate(-450deg) translate(50px) rotate(450deg);
     }
     100% {
-        transform: rotate(360deg) translateX(30px) rotate(-360deg);
+        transform: rotate(-90deg) translate(50px) rotate(90deg);
     }
 }
