@@ -69,3 +69,64 @@
 .new1:hover{
     color:white;
 }
+@media (max-width: 768px) {
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        /* align-items: flex-start; */
+        height: auto;
+        padding: 10px;
+        width: 100%;
+        gap:0px;
+    }
+
+    /* Hide links initially */
+    .links {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        width: 100%;
+        background-color: #002e6b;
+        /* padding: 10px; */
+        /* position: absolute; */
+        /* top: 40px; */
+        left: 0;
+    }
+
+    .links.active {
+        display: flex;
+    }
+
+    .links li {
+        display: block;
+        text-align: center;
+    }
+
+    /* Button styling for mobile */
+    .buttonDiv {
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .in, .out, .new1 {
+        width: 80%;
+        text-align: center;
+    }
+
+    /* Hamburger Menu */
+    .menu-icon {
+        display: block;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        margin-left: auto;
+    }
+}
+
+@media (min-width: 769px) {
+    .menu-icon {
+        display: none;
+    }
+}
