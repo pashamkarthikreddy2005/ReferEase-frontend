@@ -74,7 +74,7 @@ function Register() {
                 <h2>Register</h2>
                 <form onSubmit={handleSubmit}>
                     <div>
-                        <label>Username:</label>
+                        <label>*Username:</label>
                         <input
                             type="text"
                             name="username"
@@ -84,7 +84,7 @@ function Register() {
                         />
                     </div>
                     <div>
-                        <label>Email:</label>
+                        <label>*Email:</label>
                         <input
                             type="email"
                             name="email"
@@ -94,7 +94,7 @@ function Register() {
                         />
                     </div>
                     <div>
-                        <label>Password:</label>
+                        <label>*Password:</label>
                         <input
                             type="password"
                             name="password"

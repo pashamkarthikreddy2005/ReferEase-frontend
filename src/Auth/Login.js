@@ -52,7 +52,7 @@ function LoginPage() {
                     <h2>Login</h2>
                     <form onSubmit={handleSubmit}>
                         <div>
-                            <label>Username:</label>
+                            <label>*Username:</label>
                             <input
                                 type="text"
                                 name="username"
@@ -62,7 +62,7 @@ function LoginPage() {
                             />
                         </div>
                         <div>
-                            <label>Password:</label>
+                            <label>*Password:</label>
                             <input
                                 type="password"
                                 name="password"
