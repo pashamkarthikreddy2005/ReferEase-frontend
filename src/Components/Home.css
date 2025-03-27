@@ -1,0 +1,120 @@
+.home-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.home-header {
+    margin-bottom: 40px;
+}
+
+.home-header h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.home-features {
+    margin-bottom: 40px;
+}
+
+.feature-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    background: #cfdae8;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 25%;
+    margin: 10px;
+    transition: transform 0.2s;
+}
+
+.feature-card:hover {
+    transform: scale(1.05);
+}
+
+.claim-types {
+    background: #cfdae8;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 40px 0;
+}
+
+.claim-types-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.claim-type {
+    background: white;
+    border-radius: 50%; 
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    text-align: center;
+    transition: transform 0.2s; 
+}
+
+.claim-type:hover {
+    transform: scale(1.05);
+}
+
+.claim-image {
+    width: 50%;
+    height: auto;
+}
+
+.claim-types h2 {
+    color: #002e6b;
+    margin-bottom: 50px;
+}
+
+.home-guidelines {
+    background: #cfdae8;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.home-guidelines h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #002e6b;
+}
+
+.guidelines-container {
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.guidelines-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.guidelines-list li {
+    background: #fff;
+    border: 1px solid #002e6b;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 15px;
+    transition: background-color 0.2s;
+}
+
+.step-number {
+    font-weight: bold;
+    color: #002e6b;
+    margin-right: 5px;
+}

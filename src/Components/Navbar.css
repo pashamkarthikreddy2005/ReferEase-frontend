@@ -1,0 +1,71 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #002e6b;
+    padding: 15px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height:45px;
+}
+
+.links {
+    list-style-type: none;
+    display: flex;
+    gap: 60px;
+}
+
+.links li {
+    display: inline;
+}
+
+.links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.links a:hover {
+    color: #869197; 
+}
+
+.buttonDiv {
+    display: flex;
+    gap: 10px;
+}
+
+.out {
+    width:100px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.out:hover{
+    background-color: rgb(227, 5, 5);
+}
+.in{
+    width:100px;
+    background-color: white;
+    color: #002e6b;
+    border:2px solid white;
+    height:30px;
+    width:100px;
+    border-radius: 5px;
+}
+.in:hover{
+    color:white;
+    background-color: #002e6b;
+}
+.new1{
+    width:200px;
+    background-color: white;
+    color: #002e6b;
+    border:2px solid white;
+}
+.new1:hover{
+    color:white;
+}
